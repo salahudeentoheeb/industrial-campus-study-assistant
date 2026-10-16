@@ -13,6 +13,7 @@ type ElevenLabsConvaiElement = DetailedHTMLProps<HTMLAttributes<HTMLElement>, HT
   "listening-text"?: string;
   "speaking-text"?: string;
   "dynamic-variables"?: string;
+  placement?: "top-left" | "top" | "top-right" | "bottom-left" | "bottom" | "bottom-right";
 };
 
 declare module "react" {

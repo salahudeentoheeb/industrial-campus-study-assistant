@@ -167,6 +167,14 @@ export function VoiceControl() {
             ref={widgetRef}
             agent-id={AGENT_ID}
             variant="expanded"
+            // The widget defaults to anchoring its floating bubble at
+            // bottom-right — which is exactly where our own chat input
+            // form sits, so the click-passthrough hole carved for the
+            // form (see the clip-path effect above) ends up covering the
+            // widget's own bubble too, making it invisible. Anchoring the
+            // widget at the opposite corner avoids the collision instead
+            // of trying to compute a hole that dodges both rectangles.
+            placement="bottom-left"
             dynamic-variables={JSON.stringify({ current_page: pdfPageToBookLabel(currentPage) })}
           />
         ) : (
